@@ -35,6 +35,7 @@ CREATE TABLE anomalies (
     source              TEXT        NOT NULL,
     metric_name         TEXT        NOT NULL,
     anomaly_score       NUMERIC     NOT NULL,
+    severity            TEXT        DEFAULT 'medium',
     z_score_contrib     NUMERIC,
     cusum_contrib       NUMERIC,
     iforest_contrib     NUMERIC,
