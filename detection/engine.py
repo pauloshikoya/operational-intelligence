@@ -37,6 +37,8 @@ from detection import zscore_detector
 from detection import cusum_detector
 from detection import iforest_detector
 from detection import combiner
+import anthropic
+from detection.narrator import narrate_anomaly
 
 logging.basicConfig(
     level=logging.INFO,
@@ -321,6 +323,21 @@ def run():
                     result["combined"],
                     result["detector_results"],
                 )
+
+                # ── Trigger immediate narration ────────────────────────────
+                if result["combined"]["severity"] in ("high", "critical"):
+                    logger.info(
+                        f"High severity — triggering immediate narration "
+                        f"for anomaly {anomaly_id}"
+                    )
+                    anomaly_row = {
+                        "id":            anomaly_id,
+                        "source":        source,
+                        "metric_name":   metric_name,
+                        "anomaly_score": result["combined"]["final_score"],
+                        "narrative_json": result["detector_results"],
+                    }
+                    narrate_anomaly(conn, anomaly_row, anthropic.Anthropic())
 
                 publish_anomaly_event(
                     producer, anomaly_id,
