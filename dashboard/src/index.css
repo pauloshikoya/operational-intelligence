@@ -1,0 +1,21 @@
+/* src/index.css */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #080C10;
+  color: #C8D6E5;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: #080C10; }
+::-webkit-scrollbar-thumb { background: #1A2332; border-radius: 2px; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+button { font-family: inherit; }
+input  { font-family: inherit; }
