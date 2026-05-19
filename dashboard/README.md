@@ -5,9 +5,7 @@ Ingests live commodity price and logistics data, detects statistical
 anomalies using three complementary methods, and generates structured
 intelligence reports using Claude.
 
-**Live demo:** https://operational-intelligence-liard.vercel.app
-**API docs:**  https://operational-intelligence-production.up.railway.app/docs
-
+**Live demo:** [your-app.vercel.app] (add after deployment)  
 **Demo video:** [YouTube link] (add after recording)
 
 ---
