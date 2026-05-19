@@ -43,6 +43,9 @@ app.add_middleware(
         "http://localhost:5173",    # Vite dev server
         "http://localhost:3000",    # Alternative dev port
         "https://*.vercel.app",     # Vercel deployment
+        "https://operational-intelligence-liard.vercel.app",      # your main domain
+        "https://operational-intelligence-ippw7t70w-pauloshikoyas-projects.vercel.app",  # your preview URL
+
     ],
     allow_credentials=True,
     allow_methods=["*"],
