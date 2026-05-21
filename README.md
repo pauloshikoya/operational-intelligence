@@ -25,3 +25,11 @@ recommended actions, and explicit caveats about data limitations.
 ---
 
 ## Architecture
+
+See the full interactive diagram below, or view [docs/architecture.md](docs/architecture.md).
+
+```mermaid
+flowchart TD
+    AV["🌐 Alpha Vantage API\n6 commodity prices"] -->|every 5 min| PC
+    ...
+```
